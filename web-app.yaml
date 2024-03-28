@@ -1,0 +1,20 @@
+services:
+
+  web-app:
+    profiles: [container, webapp]
+    build:
+      context: ./webapp
+      dockerfile: Dockerfile
+    environment:
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}
+      - LLM=${LLM}
+      # host.docker.internal: listening the host from the container
+    ports:
+      - 8080:8080
+    develop:
+      watch:
+        - action: sync
+          path: ./webapp/public
+          target: /app/public
+        - action: rebuild
+          path: ./webapp/index.mjs

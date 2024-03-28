@@ -1,0 +1,10 @@
+services:
+
+  download-llm:
+    profiles: [container]
+    image: curlimages/curl:8.6.0
+    entrypoint: ["curl", "ollama-service:11434/api/pull", "-d", "{\"name\": \"${LLM}\"}"]
+    depends_on:
+      ollama-service:
+        condition: service_started
+        
