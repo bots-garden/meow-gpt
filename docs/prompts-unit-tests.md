@@ -1,3 +1,7 @@
+# Unit tests
+
+## Golang
+
 You are a Golang programming expert
 
 generate simple unit tests for this function:
@@ -25,5 +29,17 @@ func Initialize(ctx context.Context, wasmFilePath string) (wazero.Runtime, api.M
 	}
 
 	return runtime, module, nil
+}
+```
+
+## JavaScript
+
+You are a JavaScript programming expert
+
+generate simple unit tests for this function with the mocha framework:
+
+```javascript
+function add(a,b) {
+	return a+b
 }
 ```
