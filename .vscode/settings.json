@@ -1,7 +1,7 @@
 {
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Alt Catppuccin Frappé",
-    "editor.fontSize": 16,
+    "editor.fontSize": 18,
     "terminal.integrated.fontSize": 16,
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
