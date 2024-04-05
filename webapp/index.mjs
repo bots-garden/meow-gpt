@@ -45,7 +45,7 @@ fastify.register(fastifyStatic, {
   root: path.join(import.meta.dirname, 'public'),
 })
 
-const { ADDRESS = '0.0.0.0', PORT = '8080' } = process.env;
+const { ADDRESS = '0.0.0.0', HTTP_PORT = '8080' } = process.env;
 
 fastify.delete('/clear-history', async (request, reply) => {
   console.log("👋 clear conversation summary")
@@ -107,12 +107,12 @@ fastify.post('/prompt', async (request, reply) => {
 
 const start = async () => {
   try {
-    await fastify.listen({ host: ADDRESS, port: parseInt(PORT, 10)  })
+    await fastify.listen({ host: ADDRESS, port: parseInt(HTTP_PORT, 10)  })
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
   }
-  console.log(`Server listening at ${ADDRESS}:${PORT}`)
+  console.log(`Server listening at ${ADDRESS}:${HTTP_PORT}`)
 
 }
 start()

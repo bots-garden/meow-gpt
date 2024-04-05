@@ -3,7 +3,7 @@
 ## Run all in containers
 
 ```bash
-LLM=deepseek-coder OLLAMA_BASE_URL=http://ollama-service:11434 docker compose --profile container up
+HTTP_PORT=8888 LLM=deepseek-coder OLLAMA_BASE_URL=http://ollama-service:11434 docker compose --profile container up
 # or LLM=deepseek-coder OLLAMA_BASE_URL=http://ollama-service:11434 docker compose --profile container watch
 ```
 > The first time only, you must wait for the complete downloading of the model.
@@ -17,7 +17,7 @@ ollama pull ${LLM}
 ```
 
 ```bash
-LLM=deepseek-coder OLLAMA_BASE_URL=http://host.docker.internal:11434 docker compose --profile webapp up
+HTTP_PORT=8888 LLM=deepseek-coder OLLAMA_BASE_URL=http://host.docker.internal:11434 docker compose --profile webapp up
 # or LLM=deepseek-coder OLLAMA_BASE_URL=http://host.docker.internal:11434 docker compose --profile webapp watch
 ```
 
@@ -34,7 +34,7 @@ docker compose --env-file gemma-2b-instruct.env --profile webapp up
 
 ## Open the Web UI
 
-http://localhost:8080
+http://localhost:8888
 
 ## Development
 

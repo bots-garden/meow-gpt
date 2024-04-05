@@ -8,9 +8,10 @@ services:
     environment:
       - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}
       - LLM=${LLM}
+      - HTTP_PORT=${HTTP_PORT} 
       # host.docker.internal: listening the host from the container
     ports:
-      - 8080:8080
+      - ${HTTP_PORT}:${HTTP_PORT}
     develop:
       watch:
         - action: sync
@@ -18,3 +19,4 @@ services:
           target: /app/public
         - action: rebuild
           path: ./webapp/index.mjs
+          
